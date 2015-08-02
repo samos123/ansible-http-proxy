@@ -1,0 +1,5 @@
+---
+- name: Add proxy variables to /etc/environment
+  template: src=environment.j2 dest=/etc/environment
+- name: Let apt-get also use proxy variables
+  template: src=95proxies.j2 dest=/etc/apt/apt.conf.d/95proxies
